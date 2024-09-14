@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="admin.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+    </header>
+    <main>
+        <h2>Manage Users and Files</h2>
+
+        <!-- User Management -->
+        <section id="user-management">
+            <h3>User Management</h3>
+            <p>Manage user accounts and file access.</p>
+            <input type="text" id="user-id" placeholder="Enter user ID">
+            <button id="suspend-btn">Suspend User</button>
+            <p id="suspend-message"></p>
+        </section>
+
+        <!-- File Management -->
+        <section id="file-management">
+            <h3>File Management</h3>
+            <p>View and manage uploaded files.</p>
+            <ul id="file-list">
+                <!-- Files will be listed here -->
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
