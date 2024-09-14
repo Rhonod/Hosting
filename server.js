@@ -53,3 +53,36 @@ app.post('/upload', upload.single('bot-file'), (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
+//server.js
+document.addEventListener('DOMContentLoaded', () => {
+    const uploadBtn = document.getElementById('upload-btn');
+    const botFileInput = document.getElementById('bot-file');
+    const uploadMessage = document.getElementById('upload-message');
+    const consoleOutput = document.getElementById('console-output');
+
+    uploadBtn.addEventListener('click', () => {
+        const file = botFileInput.files[0];
+        if (!file) {
+            uploadMessage.textContent = 'Please select a file.';
+            return;
+        }
+
+        // Create FormData to send file
+        const formData = new FormData();
+        formData.append('bot-file', file);
+
+        // Replace with your file upload endpoint
+        fetch('/upload', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            uploadMessage.textContent = data.message;
+            consoleOutput.textContent = data.consoleOutput || 'No output available.';
+        })
+        .catch(error => {
+            uploadMessage.textContent = `Error uploading file: ${error}`;
+        });
+    });
+});
