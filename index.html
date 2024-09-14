@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Hosting</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="admin.js" defer></script>
 </head>
 <body>
     <header>
@@ -14,7 +15,18 @@
         <h2>Welcome to Our Free Hosting Service</h2>
         <p>To access the admin panel and learn how to host your bot, please log in.</p>
         <a href="admin.html">Go to Admin Panel</a>
-        <p>Follow the instructions in the admin panel to upload your bot file and run it locally.</p>
+        
+        <!-- File upload section -->
+        <div id="upload-section" style="display: none;">
+            <h2>Upload Your Bot File</h2>
+            <input type="file" id="bot-file" name="bot-file" accept=".js">
+            <button id="upload-btn">Upload</button>
+            <p id="upload-message"></p>
+            <div id="console">
+                <h2>Console Output</h2>
+                <pre id="console-output"></pre>
+            </div>
+        </div>
     </main>
 </body>
 </html>
