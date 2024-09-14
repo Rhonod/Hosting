@@ -65,9 +65,13 @@ button:hover {
 }
 
 #console-output {
-    background-color: #000;
-    color: #0f0;
-    padding: 10px;
-    border-radius: 5px;
-    white-space: pre-wrap; /* Allows line breaks and spaces */
+    white-space: pre-wrap;
+}
+
+#upload-message {
+    color: #ff0000;
+}
+
+#console-output {
+    color: #00ff00;
 }
